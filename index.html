@@ -1,19 +1,44 @@
 ---
 layout: base
-title: Home
+title: Media Pages
+pagination:
+  data: photos.8v50ge9.media
+  size: 15
 ---
 
 <header>
   <h1>{{ title }}</h1>
 </header>
 
+<h1>Page {{ pagination.pageNumber | plus: 1 }}</h1>
+<ul>
+  {% for post in pagination.items -%}
+  <a href="{{post.url}}">
+    <img src="{{post.src.medium}}">
+  </a>
+  {% endfor -%}
+</ul>
+
+<hr>
+<ul>
+  <li><a href="{{ pagination.href.first }}">First</a></li>
+  <li>{% if pagination.href.previous %}<a href="{{ pagination.href.previous }}">Previous</a>{% else %}Previous{% endif
+    %}</li>
+
+    <li>
+      Page {{ pagination.pageNumber | plus: 1 }}
+      </li>
+  
+
+  <li>{% if pagination.href.next %}<a href="{{ pagination.href.next }}">Next</a>{% else %}Next{% endif %}</li>
+  <li><a href="{{ pagination.href.last }}">Last</a></li>
+</ul>
+
 <footer>
   <hr />
   <p>
     <small>
-      <a href="https://www.pexels.com" target="_blank"
-        >Photos provided by Pexels</a
-      >
+      <a href="https://www.pexels.com" target="_blank">Photos provided by Pexels</a>
     </small>
   </p>
-</footer>
+</footer> 
