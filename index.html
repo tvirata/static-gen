@@ -20,13 +20,14 @@ pagination:
   {% endfor -%}
 </ul>
 
-<ul style="display: flex; justify-content: space-evenly; align-items: center; list-style-type: none;">
+<hr>
+<ul>
   <li><a href="{{ pagination.href.first }}">First</a></li>
   <li>{% if pagination.href.previous %}<a href="{{ pagination.href.previous }}">Previous</a>{% else %}Previous{% endif
     %}</li>
 
     <li>
-      <h2>Page {{ pagination.pageNumber | plus: 1 }}</h2>
+      Page {{ pagination.pageNumber | plus: 1 }}
       </li>
   
 
