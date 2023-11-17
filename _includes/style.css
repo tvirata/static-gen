@@ -4,6 +4,9 @@ body {
 
 h1 {
     margin: 50px;
+    text-shadow: 2px 2px 2px rgb(148, 148, 148);
+    text-align: center;
+    font-size: 45px;
 }
 
 h2 {
@@ -13,4 +16,9 @@ h2 {
 .text {
     margin-left: 90px;
     margin-right: 90px;
+}
+
+.seg {
+    margin-top: 35px;
+    margin-bottom: 35px;
 }
