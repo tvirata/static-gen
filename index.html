@@ -3,30 +3,30 @@ layout: base
 title: Media Pages
 pagination:
   data: photos.8v50ge9.media
-  size: 15
+  size: 1
 ---
 
 <header>
   <h1>{{ title }}</h1>
 </header>
 
-<h1>Page {{ pagination.pageNumber | plus: 1 }}</h1>
 <ul>
   {% for post in pagination.items -%}
+  <h1>{{ pagination.pageNumber | plus: 1 }}. {{post.alt}}</h1>
   <a href="{{post.url}}">
-    <img src="{{post.src.medium}}">
+    <img src="{{post.src.landscape}}">
   </a>
+  <h2>By: {{post.photographer}}</h2>
   {% endfor -%}
 </ul>
 
-<hr>
-<ul>
+<ul style="display: flex; justify-content: space-evenly; align-items: center; list-style-type: none;">
   <li><a href="{{ pagination.href.first }}">First</a></li>
   <li>{% if pagination.href.previous %}<a href="{{ pagination.href.previous }}">Previous</a>{% else %}Previous{% endif
     %}</li>
 
     <li>
-      Page {{ pagination.pageNumber | plus: 1 }}
+      <h2>Page {{ pagination.pageNumber | plus: 1 }}</h2>
       </li>
   
 
