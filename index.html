@@ -14,23 +14,35 @@ pagination:
   {% for post in pagination.items -%}
   <h1>{{ pagination.pageNumber | plus: 1 }}. {{post.alt}}</h1>
   <a href="{{post.url}}">
-    <img src="{{post.src.landscape}}">
+    <img src="{{post.src.landscape}}" />
   </a>
   <h2>By: {{post.photographer}}</h2>
   {% endfor -%}
 </ul>
 
-<ul style="display: flex; justify-content: space-evenly; list-style-type: none; align-items: center;">
+<ul
+  style="
+    display: flex;
+    justify-content: space-evenly;
+    list-style-type: none;
+    align-items: center;
+  "
+>
   <li><a href="{{ pagination.href.first }}">First</a></li>
-  <li>{% if pagination.href.previous %}<a href="{{ pagination.href.previous }}">Previous</a>{% else %}Previous{% endif
-    %}</li>
+  <li>
+    {% if pagination.href.previous %}<a href="{{ pagination.href.previous }}"
+      >Previous</a
+    >{% else %}Previous{% endif %}
+  </li>
 
-    <li>
-      <h2>Page {{ pagination.pageNumber | plus: 1 }}</h2>
-      </li>
-  
+  <li>
+    <h2>Page {{ pagination.pageNumber | plus: 1 }}</h2>
+  </li>
 
-  <li>{% if pagination.href.next %}<a href="{{ pagination.href.next }}">Next</a>{% else %}Next{% endif %}</li>
+  <li>
+    {% if pagination.href.next %}<a href="{{ pagination.href.next }}">Next</a>{%
+    else %}Next{% endif %}
+  </li>
   <li><a href="{{ pagination.href.last }}">Last</a></li>
 </ul>
 
@@ -38,8 +50,9 @@ pagination:
   <hr />
   <p>
     <small>
-      <a href="https://www.pexels.com" target="_blank">Photos provided by Pexels</a>
+      <a href="https://www.pexels.com" target="_blank"
+        >Photos provided by Pexels</a
+      >
     </small>
-    <h2><a style="text-decoration: none; color: black" href="/about">About Us</a></h2>
   </p>
-</footer> 
+</footer>
