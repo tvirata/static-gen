@@ -10,7 +10,7 @@ pagination:
   <h1>{{ title }}</h1>
 </header>
 
-<ul>
+<main>
   {% for post in pagination.items -%}
   <h1>{{ pagination.pageNumber | plus: 1 }}. {{post.alt}}</h1>
   <a href="{{post.url}}">
@@ -18,7 +18,7 @@ pagination:
   </a>
   <h2>By: {{post.photographer}}</h2>
   {% endfor -%}
-</ul>
+</main>
 
 <ul
   style="
